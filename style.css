@@ -4,117 +4,92 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #222222; /* Ciemnoszary motyw */
+    color: #eeeeee; /* Jasny tekst na ciemnym tle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Strona zajmuje całą wysokość widoku */
 }
 
 .container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden; /* Aby elementy float nie wychodziły poza kontener */
+    width: 90%;
+    max-width: 800px; /* Maksymalna szerokość kontenera */
+    margin: 20px auto;
+    background-color: #333333; /* Nieco jaśniejszy ciemnoszary dla kontenera */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
 }
 
 /* Nagłówek */
 header {
-    background: #333;
-    color: #fff;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #77aaff 3px solid;
-    text-align: center;
+    margin-bottom: 30px;
 }
 
-header h1 {
-    margin: 0;
-    padding-bottom: 10px;
+.logo {
+    max-width: 150px; /* Rozmiar logo */
+    height: auto;
+    margin-bottom: 20px;
 }
 
-/* Nawigacja */
-nav {
-    background: #555;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
+h1 {
+    font-size: 2.8em;
+    color: #77aaff; /* Kolor nagłówka */
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-nav ul {
-    padding: 0;
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
+.description {
+    font-size: 1.1em;
+    color: #cccccc;
+    margin-bottom: 40px;
     padding: 0 20px;
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
+/* Sekcja gry */
+.game-section {
+    padding: 30px 0;
+    border-top: 1px solid #444444;
+    border-bottom: 1px solid #444444;
+    margin-bottom: 30px;
 }
 
-nav a:hover {
+.game-section h2 {
+    font-size: 2.2em;
     color: #77aaff;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-/* Główna treść */
-main {
-    padding: 20px 0;
-    width: 80%;
-    margin: 20px auto;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Przycisk Download */
+.download-button {
+    background-color: #28a745; /* Zielony kolor */
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.3em;
+    font-weight: bold;
     border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-section {
-    padding: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
+.download-button:hover {
+    background-color: #218838; /* Ciemniejszy zielony po najechaniu */
+    transform: translateY(-2px); /* Delikatne podniesienie przycisku */
 }
 
-section:last-of-type {
-    border-bottom: none;
-}
-
-h2 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Projekty */
-.project-item {
-    background: #f9f9f9;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.project-item h3 {
-    margin-top: 0;
-    color: #0056b3;
-}
-
-.project-item a {
-    display: inline-block;
-    background: #007bff;
-    color: #fff;
-    padding: 8px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.project-item a:hover {
-    background: #0056b3;
+.download-button:active {
+    background-color: #1e7e34; /* Jeszcze ciemniejszy zielony po kliknięciu */
+    transform: translateY(0);
 }
 
 /* Stopka */
 footer {
-    text-align: center;
-    padding: 20px;
-    background: #333;
-    color: #fff;
-    margin-top: 20px;
+    padding-top: 20px;
+    color: #999999;
+    font-size: 0.9em;
 }
