@@ -1,14 +1,16 @@
+/* Import czcionki z Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
 /* Ogólne style dla całej strony */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif; /* Zastosowanie nowej czcionki */
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: #222222; /* Ciemnoszary motyw */
     color: #eeeeee; /* Jasny tekst na ciemnym tle */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Użycie Flexbox dla pozycjonowania */
+    flex-direction: column; /* Elementy ułożone kolumnowo */
     min-height: 100vh; /* Strona zajmuje całą wysokość widoku */
 }
 
@@ -21,11 +23,13 @@ body {
     border-radius: 10px;
     padding: 30px;
     text-align: center;
+    flex-grow: 1; /* Kontener zajmuje całą dostępną przestrzeń */
 }
 
 /* Nagłówek */
 header {
     margin-bottom: 30px;
+    padding: 0 20px; /* Dodatkowy padding dla nagłówka i opisu */
 }
 
 .logo {
@@ -39,13 +43,16 @@ h1 {
     color: #77aaff; /* Kolor nagłówka */
     margin-bottom: 15px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: 700; /* Pogrubiona czcionka dla nagłówków */
 }
 
 .description {
     font-size: 1.1em;
     color: #cccccc;
     margin-bottom: 40px;
-    padding: 0 20px;
+    padding: 0 20px; /* Ważne: padding wewnętrzny dla opisu */
+    text-align: justify; /* Wyrównanie do lewej i prawej dla lepszego czytania */
+    text-align-last: center; /* Ostatnia linia wyśrodkowana */
 }
 
 /* Sekcja gry */
@@ -61,6 +68,7 @@ h1 {
     color: #77aaff;
     margin-bottom: 25px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    font-weight: 700; /* Pogrubiona czcionka */
 }
 
 /* Przycisk Download */
@@ -68,13 +76,14 @@ h1 {
     background-color: #28a745; /* Zielony kolor */
     color: #ffffff;
     border: none;
-    padding: 15px 30px;
-    font-size: 1.3em;
+    padding: 18px 40px; /* Powiększony padding dla większego przycisku */
+    font-size: 1.4em; /* Powiększona czcionka przycisku */
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Przycisk już jest wyśrodkowany ze względu na text-align: center na .container */
 }
 
 .download-button:hover {
@@ -89,7 +98,12 @@ h1 {
 
 /* Stopka */
 footer {
-    padding-top: 20px;
+    padding: 20px;
+    background: #333333; /* Używamy tego samego tła co kontener, aby stopka była spójna */
     color: #999999;
     font-size: 0.9em;
+    text-align: center;
+    width: 100%; /* Stopka na całą szerokość */
+    box-sizing: border-box; /* padding nie powiększa elementu */
+    margin-top: auto; /* To "przykleja" stopkę do dołu */
 }
