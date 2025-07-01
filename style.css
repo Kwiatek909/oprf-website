@@ -32,15 +32,20 @@ header {
     padding: 0 20px; /* Dodatkowy padding dla nagłówka i opisu */
 }
 
+/* Style dla logo */
 .logo {
-    max-width: 150px; /* Rozmiar logo */
+    max-width: 200px; /* Zwiększony rozmiar logo */
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Większy odstęp pod logo */
+    display: block; /* Sprawia, że obraz jest elementem blokowym, co ułatwia marginesy */
+    margin-left: auto; /* Wyśrodkowanie logo */
+    margin-right: auto; /* Wyśrodkowanie logo */
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.7)); /* Delikatny cień dla logo */
 }
 
 h1 {
     font-size: 2.8em;
-    color: #77aaff; /* Kolor nagłówka */
+    color: #ffffff; /* Zmieniony kolor nagłówka na biały */
     margin-bottom: 15px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     font-weight: 700; /* Pogrubiona czcionka dla nagłówków */
@@ -65,7 +70,7 @@ h1 {
 
 .game-section h2 {
     font-size: 2.2em;
-    color: #77aaff;
+    color: #ffffff; /* Zmieniony kolor nagłówka na biały */
     margin-bottom: 25px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
     font-weight: 700; /* Pogrubiona czcionka */
@@ -83,7 +88,6 @@ h1 {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    /* Przycisk już jest wyśrodkowany ze względu na text-align: center na .container */
 }
 
 .download-button:hover {
