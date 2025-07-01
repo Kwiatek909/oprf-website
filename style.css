@@ -3,86 +3,104 @@
 
 /* Ogólne style dla całej strony */
 body {
-    font-family: 'Open Sans', Arial, sans-serif; /* Zastosowanie nowej czcionki */
+    font-family: 'Open Sans', Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: #222222; /* Ciemnoszary motyw */
     color: #eeeeee; /* Jasny tekst na ciemnym tle */
-    display: flex; /* Użycie Flexbox dla pozycjonowania */
-    flex-direction: column; /* Elementy ułożone kolumnowo */
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie kontenera poziomo */
+    align-items: center; /* Wyśrodkowanie kontenera pionowo */
     min-height: 100vh; /* Strona zajmuje całą wysokość widoku */
 }
 
+/* Zmieniamy display .container na flex, aby jego zawartość mogła być rozłożona pionowo */
 .container {
     width: 90%;
-    max-width: 800px; /* Maksymalna szerokość kontenera */
-    margin: 20px auto;
-    background-color: #333333; /* Nieco jaśniejszy ciemnoszary dla kontenera */
+    max-width: 800px;
+    /* Usunięto margin: 20px auto; aby body flexbox mógł je wyśrodkować */
+    background-color: #333333;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 30px;
     text-align: center;
-    flex-grow: 1; /* Kontener zajmuje całą dostępną przestrzeń */
+    /* Użycie Flexbox do zarządzania wewnętrznymi elementami */
+    display: flex;
+    flex-direction: column; /* Ułożenie elementów w kolumnie */
+    justify-content: space-between; /* Rozłożenie elementów, aby stopka była na dole */
+    min-height: 500px; /* Minimalna wysokość kontenera, aby stopka miała miejsce na dole */
 }
 
 /* Nagłówek */
 header {
-    margin-bottom: 30px;
-    padding: 0 20px; /* Dodatkowy padding dla nagłówka i opisu */
+    margin-bottom: 30px; /* Możesz dostosować ten margines */
+    padding: 0 20px;
+    flex-shrink: 0; /* Nie kurcz się */
 }
 
 /* Style dla logo */
 .logo {
-    max-width: 200px; /* Zwiększony rozmiar logo */
+    max-width: 200px;
     height: auto;
-    margin-bottom: 30px; /* Większy odstęp pod logo */
-    display: block; /* Sprawia, że obraz jest elementem blokowym, co ułatwia marginesy */
-    margin-left: auto; /* Wyśrodkowanie logo */
-    margin-right: auto; /* Wyśrodkowanie logo */
-    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.7)); /* Delikatny cień dla logo */
+    margin-bottom: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.7));
+    border-radius: 50%; /* ZAOKRĄGLENIE LOGO */
+    object-fit: cover; /* Ważne dla okrągłych zdjęć, aby nie zniekształcało */
 }
 
 h1 {
     font-size: 2.8em;
-    color: #ffffff; /* Zmieniony kolor nagłówka na biały */
+    color: #ffffff;
     margin-bottom: 15px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    font-weight: 700; /* Pogrubiona czcionka dla nagłówków */
+    font-weight: 700;
 }
 
 .description {
     font-size: 1.1em;
     color: #cccccc;
     margin-bottom: 40px;
-    padding: 0 20px; /* Ważne: padding wewnętrzny dla opisu */
-    text-align: justify; /* Wyrównanie do lewej i prawej dla lepszego czytania */
-    text-align-last: center; /* Ostatnia linia wyśrodkowana */
+    padding: 0 20px;
+    text-align: justify;
+    text-align-last: center;
 }
 
 /* Sekcja gry */
+main {
+    flex-grow: 1; /* Pozwala głównej treści zająć dostępną przestrzeń */
+    display: flex; /* Użycie flexbox w main dla wyśrodkowania game-section */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .game-section {
     padding: 30px 0;
     border-top: 1px solid #444444;
     border-bottom: 1px solid #444444;
-    margin-bottom: 30px;
+    margin-bottom: 30px; /* Możesz dostosować ten margines */
+    width: 100%; /* Upewnij się, że game-section zajmuje całą szerokość */
 }
 
 .game-section h2 {
     font-size: 2.2em;
-    color: #ffffff; /* Zmieniony kolor nagłówka na biały */
+    color: #ffffff;
     margin-bottom: 25px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-    font-weight: 700; /* Pogrubiona czcionka */
+    font-weight: 700;
 }
 
 /* Przycisk Download */
 .download-button {
-    background-color: #28a745; /* Zielony kolor */
+    background-color: #28a745;
     color: #ffffff;
     border: none;
-    padding: 18px 40px; /* Powiększony padding dla większego przycisku */
-    font-size: 1.4em; /* Powiększona czcionka przycisku */
+    padding: 18px 40px;
+    font-size: 1.4em;
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
@@ -91,23 +109,25 @@ h1 {
 }
 
 .download-button:hover {
-    background-color: #218838; /* Ciemniejszy zielony po najechaniu */
-    transform: translateY(-2px); /* Delikatne podniesienie przycisku */
+    background-color: #218838;
+    transform: translateY(-2px);
 }
 
 .download-button:active {
-    background-color: #1e7e34; /* Jeszcze ciemniejszy zielony po kliknięciu */
+    background-color: #1e7e34;
     transform: translateY(0);
 }
 
-/* Stopka */
-footer {
-    padding: 20px;
-    background: #333333; /* Używamy tego samego tła co kontener, aby stopka była spójna */
+/* Nowa sekcja z informacjami o prawach autorskich */
+.copyright-info {
+    padding-top: 20px; /* Odstęp od góry */
     color: #999999;
     font-size: 0.9em;
     text-align: center;
-    width: 100%; /* Stopka na całą szerokość */
-    box-sizing: border-box; /* padding nie powiększa elementu */
-    margin-top: auto; /* To "przykleja" stopkę do dołu */
+    margin-top: auto; /* To "przykleja" ten div do dołu kontenera */
 }
+
+/* Usunięto style dla starego elementu <footer> */
+/* footer {
+    display: none; // Możesz to zakomentować lub usunąć
+} */
