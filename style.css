@@ -125,8 +125,8 @@ main {
     position: fixed; /* Utrzymuje element w stałej pozycji względem okna przeglądarki */
     bottom: 0; /* Przykleja do dolnej krawędzi */
     left: 0; /* Przykleja do lewej krawędzi */
-    width: 100px; /* Szerokość przycisku */
-    height: 100px; /* Wysokość przycisku */
+    width: 25px; /* Szerokość przycisku */
+    height: 25px; /* Wysokość przycisku */
     /* background-color: rgba(255, 0, 0, 0.2); */ /* Tymczasowy kolor, aby było widać gdzie jest przycisk - usuń w gotowej wersji */
     cursor: pointer; /* Zmienia kursor na wskaźnik dłoni po najechaniu */
     z-index: 9999; /* Zapewnia, że przycisk jest na wierzchu innych elementów */
