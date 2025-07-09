@@ -13,6 +13,7 @@ body {
     justify-content: center; /* Wyśrodkowanie kontenera poziomo */
     align-items: center; /* Wyśrodkowanie kontenera pionowo */
     min-height: 100vh; /* Strona zajmuje całą wysokość widoku */
+    position: relative; /* Ważne dla pozycjonowania ukrytego przycisku względem body */
 }
 
 /* Zmieniamy display .container na flex, aby jego zawartość mogła być rozłożona pionowo */
@@ -62,9 +63,6 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     font-weight: 700;
 }
-
-/* Usunięto style dla .description, ponieważ ten element został usunięty */
-/* .description { ... } */
 
 /* Sekcja gry - teraz nie jest potrzebna jako oddzielna sekcja */
 main {
@@ -120,4 +118,17 @@ main {
     font-size: 0.9em;
     text-align: center;
     margin-top: auto; /* To "przykleja" ten div do dołu kontenera */
+}
+
+/* Style dla niewidzialnego przycisku w lewym dolnym rogu */
+#ukrytyPrzycisk {
+    position: fixed; /* Utrzymuje element w stałej pozycji względem okna przeglądarki */
+    bottom: 0; /* Przykleja do dolnej krawędzi */
+    left: 0; /* Przykleja do lewej krawędzi */
+    width: 100px; /* Szerokość przycisku */
+    height: 100px; /* Wysokość przycisku */
+    /* background-color: rgba(255, 0, 0, 0.2); */ /* Tymczasowy kolor, aby było widać gdzie jest przycisk - usuń w gotowej wersji */
+    cursor: pointer; /* Zmienia kursor na wskaźnik dłoni po najechaniu */
+    z-index: 9999; /* Zapewnia, że przycisk jest na wierzchu innych elementów */
+    /* opacity: 0; */ /* Ustawienie całkowitej przezroczystości, aby przycisk był niewidzialny. Jeśli usuniesz background-color to wystarczy. */
 }
