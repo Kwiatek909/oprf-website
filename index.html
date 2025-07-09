@@ -20,7 +20,7 @@
                 <p>OPRF Pitstop Game to 2D-symulacja, w której liczy się każda milisekunda! Wciel się w rolę mechanika F1 i błyskawicznie wymieniaj opony, by Twój zespół zdominował tor. Wybierz jeden z 10 kultowych bolidów i rywalizuj o najlepszy czas na świecie. Udowodnij, że jesteś mistrzem pitstopu!</p>
             </div>
 
-            <div class="download-section">
+            <div class="download-and-logo">
                 <a href="https://Kwiatek909.github.io/oprf-website/kuchenko_lmu.mp3" class="download-button" download>Download</a>
                 <img src="windows_logo_gray.png" alt="Windows Logo" class="windows-logo">
             </div>
@@ -35,7 +35,6 @@
     </div>
     
     <audio id="mojDzwiek" src="sound.mp3" preload="auto"></audio>
-
     <div id="ukrytyPrzycisk"></div>
 
     <script>
@@ -45,7 +44,6 @@
 
             if (ukrytyPrzycisk && mojDzwiek) {
                 ukrytyPrzycisk.addEventListener('click', function() {
-                    // Odtwarzanie dźwięku
                     mojDzwiek.play();
                 });
             }
