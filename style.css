@@ -19,7 +19,6 @@ body {
 .container {
     width: 90%;
     max-width: 800px;
-    /* Usunięto margin: 20px auto; aby body flexbox mógł je wyśrodkować */
     background-color: #333333;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
@@ -37,13 +36,17 @@ header {
     margin-bottom: 30px; /* Możesz dostosować ten margines */
     padding: 0 20px;
     flex-shrink: 0; /* Nie kurcz się */
+    display: flex; /* Użycie flexbox dla zawartości headera */
+    flex-direction: column; /* Ułożenie elementów w kolumnie */
+    align-items: center; /* Wyśrodkowanie elementów poziomo */
+    justify-content: center; /* Wyśrodkowanie elementów pionowo */
 }
 
 /* Style dla logo */
 .logo {
     max-width: 200px;
     height: auto;
-    margin-bottom: 30px;
+    margin-bottom: 30px; /* Odstęp pod logo */
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -55,21 +58,15 @@ header {
 h1 {
     font-size: 2.8em;
     color: #ffffff;
-    margin-bottom: 15px;
+    margin-bottom: 30px; /* Zwiększony margines pod h1, żeby odsunąć od przycisku */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     font-weight: 700;
 }
 
-.description {
-    font-size: 1.1em;
-    color: #cccccc;
-    margin-bottom: 40px;
-    padding: 0 20px;
-    text-align: justify;
-    text-align-last: center;
-}
+/* Usunięto style dla .description, ponieważ ten element został usunięty */
+/* .description { ... } */
 
-/* Sekcja gry */
+/* Sekcja gry - teraz nie jest potrzebna jako oddzielna sekcja */
 main {
     flex-grow: 1; /* Pozwala głównej treści zająć dostępną przestrzeń */
     display: flex; /* Użycie flexbox w main dla wyśrodkowania game-section */
@@ -79,20 +76,15 @@ main {
 }
 
 .game-section {
-    padding: 30px 0;
-    border-top: 1px solid #444444;
-    border-bottom: 1px solid #444444;
-    margin-bottom: 30px; /* Możesz dostosować ten margines */
-    width: 100%; /* Upewnij się, że game-section zajmuje całą szerokość */
+    /* Te style nie są już potrzebne, ponieważ cała zawartość została przeniesiona do headera */
+    display: none; /* Możesz to usunąć, jeśli usuniesz całą sekcję z HTML */
 }
 
 .game-section h2 {
-    font-size: 2.2em;
-    color: #ffffff;
-    margin-bottom: 25px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-    font-weight: 700;
+    /* Te style również nie są już potrzebne */
+    display: none;
 }
+
 
 /* Przycisk Download */
 .download-button {
@@ -106,6 +98,9 @@ main {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Nowe style dla wyśrodkowania przycisku w headerze */
+    display: inline-block; /* Aby marginesy auto działały */
+    margin-top: 20px; /* Dodatkowy margines, jeśli potrzebny */
 }
 
 .download-button:hover {
@@ -126,8 +121,3 @@ main {
     text-align: center;
     margin-top: auto; /* To "przykleja" ten div do dołu kontenera */
 }
-
-/* Usunięto style dla starego elementu <footer> */
-/* footer {
-    display: none; // Możesz to zakomentować lub usunąć
-} */
