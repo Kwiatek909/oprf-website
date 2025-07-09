@@ -90,12 +90,17 @@ main {
     display: none;
 }
 
-/* NOWE STYLE dla kontenera przycisku Download i logo Windows */
+/* Zmienione style dla kontenera przycisku Download i logo Windows */
 .download-and-logo {
-    display: flex; /* Użyjemy flexboxa do ułożenia elementów obok siebie */
+    display: flex;
     align-items: center; /* Wyśrodkowanie elementów w pionie */
-    justify-content: center; /* Wyśrodkowanie CAŁEJ grupy (przycisk + logo) w poziomie */
-    margin-top: 20px; /* Odstęp od góry, jeśli potrzebny */
+    /* Usunęliśmy justify-content: center; z tego elementu */
+    margin-top: 20px;
+    /* Dodaj auto marginesy po bokach, żeby przycisk był optycznie na środku */
+    margin-left: auto;
+    margin-right: auto;
+    /* Dodatkowy margines, żeby zrekompensować obecność logo po prawej */
+    padding-right: 30px; /* Dostosuj tę wartość, aby przycisk był idealnie na środku */
 }
 
 /* Przycisk Download */
@@ -111,7 +116,6 @@ main {
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-decoration: none;
-    /* Usunięto margin-right, żeby odstęp był zarządzany przez gap w .download-and-logo */
 }
 
 .download-button:hover {
@@ -128,8 +132,7 @@ main {
 .windows-logo {
     width: 35px;
     height: auto;
-    /* Użyjemy filtrów, które mają nadać biały kolor z ciemnego/szarego oryginału */
-    filter: grayscale(100%) brightness(200%) invert(100%); /* Dostosuj w razie potrzeby */
+    filter: grayscale(100%) brightness(200%) invert(100%); /* Filtr do uzyskania białego koloru */
     opacity: 0.8;
     margin-left: 15px; /* Odstęp między przyciskiem a logo */
 }
