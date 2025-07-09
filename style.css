@@ -132,7 +132,7 @@ main {
 .windows-logo {
     width: 35px; /* Rozmiar logo Windows */
     height: auto;
-    filter: grayscale(100%) brightness(200%) invert(100%); /* Zmienia na szary i trochę rozjaśnia */
+    filter: whitescale(100%) brightness(200%); /* Zmienia na szary i trochę rozjaśnia */
     opacity: 0.8; /* Lekka przezroczystość */
     margin-left: 5px; /* Mały odstęp od przycisku */
 }
