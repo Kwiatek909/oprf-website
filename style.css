@@ -59,9 +59,19 @@ header {
 h1 {
     font-size: 2.8em;
     color: #ffffff;
-    margin-bottom: 30px; /* Zwiększony margines pod h1, żeby odsunąć od przycisku */
+    margin-bottom: 20px; /* Zmniejszony margines pod h1, żeby zrobić miejsce na opis */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     font-weight: 700;
+}
+
+/* Nowe style dla opisu gry */
+.game-description {
+    margin-bottom: 30px; /* Odstęp pod opisem, nad sekcją pobierania */
+    font-size: 1.1em;
+    color: #cccccc;
+    max-width: 600px; /* Ograniczenie szerokości tekstu dla lepszej czytelności */
+    text-align: center;
+    line-height: 1.8;
 }
 
 /* Sekcja gry - teraz nie jest potrzebna jako oddzielna sekcja */
@@ -83,6 +93,14 @@ main {
     display: none;
 }
 
+/* Nowa sekcja dla przycisku Download i logo Windows */
+.download-section {
+    display: flex; /* Użycie flexboxa do ułożenia elementów obok siebie */
+    align-items: center; /* Wyśrodkowanie elementów w pionie */
+    justify-content: center; /* Wyśrodkowanie elementów w poziomie */
+    gap: 15px; /* Odstęp między przyciskiem a logo */
+    margin-top: 20px; /* Odstęp od góry, jeśli potrzebny */
+}
 
 /* Przycisk Download */
 .download-button {
@@ -96,9 +114,8 @@ main {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    /* Nowe style dla wyśrodkowania przycisku w headerze */
-    display: inline-block; /* Aby marginesy auto działały */
-    margin-top: 20px; /* Dodatkowy margines, jeśli potrzebny */
+    /* Usunięto display: inline-block i margin-top: 20px; - teraz zarządzane przez .download-section */
+    text-decoration: none; /* Usuwa podkreślenie linku */
 }
 
 .download-button:hover {
@@ -109,6 +126,15 @@ main {
 .download-button:active {
     background-color: #1e7e34;
     transform: translateY(0);
+}
+
+/* Nowe style dla logo Windows */
+.windows-logo {
+    width: 35px; /* Rozmiar logo Windows */
+    height: auto;
+    filter: grayscale(100%) brightness(150%); /* Zmienia na szary i trochę rozjaśnia */
+    opacity: 0.8; /* Lekka przezroczystość */
+    margin-left: 5px; /* Mały odstęp od przycisku */
 }
 
 /* Nowa sekcja z informacjami o prawach autorskich */
