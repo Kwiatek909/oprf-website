@@ -25,7 +25,6 @@ body {
     border-radius: 10px;
     padding: 30px;
     text-align: center;
-    /* Użycie Flexbox do zarządzania wewnętrznymi elementami */
     display: flex;
     flex-direction: column; /* Ułożenie elementów w kolumnie */
     justify-content: space-between; /* Rozłożenie elementów, aby stopka była na dole */
@@ -34,10 +33,10 @@ body {
 
 /* Nagłówek */
 header {
-    margin-bottom: 30px; /* Możesz dostosować ten margines */
+    margin-bottom: 30px;
     padding: 0 20px;
-    flex-shrink: 0; /* Nie kurcz się */
-    display: flex; /* Użycie flexbox dla zawartości headera */
+    flex-shrink: 0;
+    display: flex;
     flex-direction: column; /* Ułożenie elementów w kolumnie */
     align-items: center; /* Wyśrodkowanie elementów poziomo */
     justify-content: center; /* Wyśrodkowanie elementów pionowo */
@@ -47,58 +46,55 @@ header {
 .logo {
     max-width: 200px;
     height: auto;
-    margin-bottom: 30px; /* Odstęp pod logo */
+    margin-bottom: 30px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.7));
-    border-radius: 50%; /* ZAOKRĄGLENIE LOGO */
-    object-fit: cover; /* Ważne dla okrągłych zdjęć, aby nie zniekształcało */
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 h1 {
     font-size: 2.8em;
     color: #ffffff;
-    margin-bottom: 20px; /* Zmniejszony margines pod h1, żeby zrobić miejsce na opis */
+    margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     font-weight: 700;
 }
 
-/* Nowe style dla opisu gry */
+/* Style dla opisu gry */
 .game-description {
-    margin-bottom: 30px; /* Odstęp pod opisem, nad sekcją pobierania */
+    margin-bottom: 30px;
     font-size: 1.1em;
     color: #cccccc;
-    max-width: 600px; /* Ograniczenie szerokości tekstu dla lepszej czytelności */
+    max-width: 600px;
     text-align: center;
     line-height: 1.8;
 }
 
 /* Sekcja gry - teraz nie jest potrzebna jako oddzielna sekcja */
 main {
-    flex-grow: 1; /* Pozwala głównej treści zająć dostępną przestrzeń */
-    display: flex; /* Użycie flexbox w main dla wyśrodkowania game-section */
+    flex-grow: 1;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
 .game-section {
-    /* Te style nie są już potrzebne, ponieważ cała zawartość została przeniesiona do headera */
-    display: none; /* Możesz to usunąć, jeśli usuniesz całą sekcję z HTML */
-}
-
-.game-section h2 {
-    /* Te style również nie są już potrzebne */
     display: none;
 }
 
-/* Nowa sekcja dla przycisku Download i logo Windows */
-.download-section {
-    display: flex; /* Użycie flexboxa do ułożenia elementów obok siebie */
+.game-section h2 {
+    display: none;
+}
+
+/* NOWE STYLE dla kontenera przycisku Download i logo Windows */
+.download-and-logo {
+    display: flex; /* Użyjemy flexboxa do ułożenia elementów obok siebie */
     align-items: center; /* Wyśrodkowanie elementów w pionie */
-    justify-content: center; /* Wyśrodkowanie elementów w poziomie */
-    gap: 15px; /* Odstęp między przyciskiem a logo */
+    justify-content: center; /* Wyśrodkowanie CAŁEJ grupy (przycisk + logo) w poziomie */
     margin-top: 20px; /* Odstęp od góry, jeśli potrzebny */
 }
 
@@ -114,8 +110,8 @@ main {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    /* Usunięto display: inline-block i margin-top: 20px; - teraz zarządzane przez .download-section */
-    text-decoration: none; /* Usuwa podkreślenie linku */
+    text-decoration: none;
+    /* Usunięto margin-right, żeby odstęp był zarządzany przez gap w .download-and-logo */
 }
 
 .download-button:hover {
@@ -128,33 +124,34 @@ main {
     transform: translateY(0);
 }
 
-/* Nowe style dla logo Windows */
+/* Style dla logo Windows */
 .windows-logo {
-    width: 35px; /* Rozmiar logo Windows */
+    width: 35px;
     height: auto;
-    filter: whitescale(100%) brightness(200%); /* Zmienia na szary i trochę rozjaśnia */
-    opacity: 0.8; /* Lekka przezroczystość */
-    margin-left: 5px; /* Mały odstęp od przycisku */
+    /* Użyjemy filtrów, które mają nadać biały kolor z ciemnego/szarego oryginału */
+    filter: grayscale(100%) brightness(200%) invert(100%); /* Dostosuj w razie potrzeby */
+    opacity: 0.8;
+    margin-left: 15px; /* Odstęp między przyciskiem a logo */
 }
 
 /* Nowa sekcja z informacjami o prawach autorskich */
 .copyright-info {
-    padding-top: 20px; /* Odstęp od góry */
+    padding-top: 20px;
     color: #999999;
     font-size: 0.9em;
     text-align: center;
-    margin-top: auto; /* To "przykleja" ten div do dołu kontenera */
+    margin-top: auto;
 }
 
 /* Style dla niewidzialnego przycisku w lewym dolnym rogu */
 #ukrytyPrzycisk {
-    position: fixed; /* Utrzymuje element w stałej pozycji względem okna przeglądarki */
-    bottom: 0; /* Przykleja do dolnej krawędzi */
-    left: 0; /* Przykleja do lewej krawędzi */
-    width: 25px; /* Szerokość przycisku */
-    height: 25px; /* Wysokość przycisku */
-    /* background-color: rgba(255, 0, 0, 0.2); */ /* Tymczasowy kolor, aby było widać gdzie jest przycisk - usuń w gotowej wersji */
-    cursor: pointer; /* Zmienia kursor na wskaźnik dłoni po najechaniu */
-    z-index: 9999; /* Zapewnia, że przycisk jest na wierzchu innych elementów */
-    /* opacity: 0; */ /* Ustawienie całkowitej przezroczystości, aby przycisk był niewidzialny. Jeśli usuniesz background-color to wystarczy. */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    /* background-color: rgba(255, 0, 0, 0.2); */
+    cursor: pointer;
+    z-index: 9999;
+    /* opacity: 0; */
 }
