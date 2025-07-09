@@ -19,11 +19,29 @@
         </header>
 
         <main>
-            </main>
+        </main>
         
         <div class="copyright-info">
             <p>&copy; 2025 Official Polish Racing Fortnite. Wszelkie prawa zastrzeżone.</p>
         </div>
-    </div>  
+    </div>
+    
+    <audio id="mojDzwiek" src="sound.mp3" preload="auto"></audio>
+
+    <div id="ukrytyPrzycisk"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ukrytyPrzycisk = document.getElementById('ukrytyPrzycisk');
+            const mojDzwiek = document.getElementById('mojDzwiek');
+
+            if (ukrytyPrzycisk && mojDzwiek) {
+                ukrytyPrzycisk.addEventListener('click', function() {
+                    // Odtwarzanie dźwięku
+                    mojDzwiek.play();
+                });
+            }
+        });
+    </script>
 </body>
 </html>
